@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-image: url("../img/icecreamcaseo.jpg");
+    height: 1067px;
+}
+.intro  {
+    text-align: center;
+    color: white;
+}
+.uneaten-flavors {
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: white;
+}
+.eaten-flavors {
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: white;
+}
+.add-flavor {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
