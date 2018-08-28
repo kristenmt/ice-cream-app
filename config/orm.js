@@ -22,7 +22,7 @@ function objToSql(ob) {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      // if string with spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
@@ -47,40 +47,46 @@ var orm = {
       cb(result);
     });
   },
-  create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
+  create: function(tableInput, colInput, valInput, cb) {
+    var queryString = 'INSERT INTO ' + tableInput + '(' + colInput + ') VALUES ("' + valInput + '");'
+    connection.query(queryString, function(err, response) {
+        if (err) throw err;
+    // queryString += " (";
+    // queryString += cols.toString();
+    // queryString += ") ";
+    // queryString += "VALUES (";
+    // queryString += printQuestionMarks(vals.length);
+    // queryString += ") ";
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
-      if (err) {
-        throw err;
-      }
+    // connection.query(queryString, vals, function(err, result) {
+    //   if (err) {
+    //     throw err;
+    //   }
 
-      cb(result);
+      cb(response);
     });
   },
   // An example of objColVals would be {flavor: mint, eaten: true}
-  update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+  update: function(tableInput, colInput, valInput, idInput, cb) {
+   
+    let queryString = 'UPDATE ' + tableInput + ' SET ' + colInput + ' = ' + valInput + ' WHERE id=' + idInput + ';'
+    connection.query(queryString, function(err, response) {
+        if (err) throw err;
 
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+    // var queryString = "UPDATE " + table;
 
-    console.log(queryString);
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
+    // queryString += " SET ";
+    // queryString += objToSql(objColVals);
+    // queryString += " WHERE ";
+    // queryString += condition;
+
+    // console.log(queryString);
+    // connection.query(queryString, function(err, result) {
+    //   if (err) {
+    //     throw err;
+    //   }
 
       cb(result);
     });

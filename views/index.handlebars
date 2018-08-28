@@ -1,6 +1,8 @@
 <div class="container">
 <div class="intro">
-<h1>Ice cream flavors!</h1>
+
+
+<h1>Ice Cream Eater</h1>
 <p>Enter your favorite flavor. Then, click to devour it!</p>
 </div>
 <div class="uneaten-flavors">
@@ -9,7 +11,7 @@
 <ul>
   {{#each flavors}}
     {{#unless eaten}}
-      {{> flavors/flavor-block eaten=true}}
+      {{> flavors/flavor-block eaten=false}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -20,13 +22,16 @@
 <ul>
   {{#each flavors}}
     {{#if eaten}}
-      {{> flavors/flavor-block eaten=false}}
+      {{> flavors/flavor-block eaten=true}}
+    <li class="cone">
+      {{cone_name}}
+    </li>
     {{/if}}
   {{/each}}
 </ul>
 </div>
 <div class="add-flavor">
-<h2>Add a flavor</h2>
+<h2>Add a flavor to the list</h2>
 <form class="create-form">
 
   <div class="form-group">
@@ -34,13 +39,7 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="flavor">Eaten?</label><br>
-    <input type="radio" name="eaten" value="1" checked> Uneaten!<br>
-    <input type="radio" name="eaten" value="0"> Eaten
-  </div>
-
-  <button type="submit">Add Flavor</button>
+  <button type="submit" class= "submit-flavor">Add My Flavor!</button>
 </form>
 </div>
 </div>
