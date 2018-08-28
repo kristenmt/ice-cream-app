@@ -9,7 +9,7 @@
 <h2>Uneaten ice cream flavors:</h2>
 
 <ul>
-  {{#each flavors}}
+  {{#each flavors}} <br>
     {{#unless eaten}}
       {{> flavors/flavor-block eaten=false}}
     {{/unless}}
@@ -31,14 +31,14 @@
 </ul>
 </div>
 <div class="add-flavor">
-<h2>Add a flavor to the list</h2>
+<h2>Add a flavor to the list</h2><br>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Flavor Name:</label>
+    <label for="ca">Flavor Name:</label><br>
     <input type="text" id="ca" name="name">
   </div>
-
+<br>
   <button type="submit" class= "submit-flavor">Add My Flavor!</button>
 </form>
 </div>

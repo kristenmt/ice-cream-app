@@ -7,6 +7,9 @@
     background-image: url("../img/icecreamcaseo.jpg");
     height: 1067px;
 }
+body {
+    font-family: 'Raleway', sans-serif;
+}
 .intro  {
     text-align: center;
     color: white;
