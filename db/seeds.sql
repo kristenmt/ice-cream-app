@@ -1,4 +1,4 @@
-INSERT INTO flavors (cone_name) VALUES ('vanilla', false);
-INSERT INTO flavors (cone_name) VALUES ('chocolate');
-INSERT INTO flavors (cone_name) VALUES ('caramel');
-INSERT INTO flavors (cone_name) VALUES ('strawberry');
+INSERT INTO flavors (cone_name, eaten) VALUES ('vanilla', FALSE);
+INSERT INTO flavors (cone_name, eaten) VALUES ('chocolate', FALSE);
+INSERT INTO flavors (cone_name, eaten) VALUES ('caramel', FALSE);
+INSERT INTO flavors (cone_name, eaten) VALUES ('strawberry', FALSE);
