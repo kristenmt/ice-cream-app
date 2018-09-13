@@ -36,7 +36,10 @@ router.get("/flavors", function(req, res) {
 //router.post("/api/flavors", function(req, res) {
   router.post("/flavors/create", function(req, res) {
   //icecream.create(["flavor", "eaten"], [req.body.flavor, req.body.eaten], function(result) {
-  icecream.create(req.body.icecream_name, function (result) {  
+  console.log(req.body.cone_name);
+  
+  icecream.create(req.body.cone_name, function (result) {  
+  
   // Send back the ID of the new quote
    // res.json({ id: result.insertId });
    console.log(result);

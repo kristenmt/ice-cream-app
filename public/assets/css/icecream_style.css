@@ -6,10 +6,13 @@
 .container{
     background-image: url("../img/icecreamcaseo.jpg");
     height: 1067px;
+    max-width: 1500px;
+    padding: 0 20px;
 }
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 .intro  {
     text-align: center;
     color: white;

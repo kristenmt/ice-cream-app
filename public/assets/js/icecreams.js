@@ -51,15 +51,19 @@
 
 ///////// new 9/12/18
 $(document).ready(function() {
-  $(".create-form").on("submit", function(event) {
+  $(".devour").on("click", function() {
     event.preventDefault();
-    var flavor_id = $(this).children(".icecream_id").val();
-    console.log(flavor_id);
+    var id= $(this).attr("data-id");
+    var data = {
+      eaten: true
+    }
+   // console.log(flavor_id);
     $.ajax({
       method: "PUT",
-      url: "/flavors/" + flavor_id
-    }).then(function(data) {
-      location.reload();
+      url: "/flavors/" + id,
+      data: data
+    }).then(function() {
+      window.location.reload();
     });
     
   });
